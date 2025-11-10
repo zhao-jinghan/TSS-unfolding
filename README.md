@@ -1,0 +1,2 @@
+# TSS_stateUnfolding
+official code for [AAAI-2026] Learning Procedural-aware Video Representations through State-Grounded Hierarchy Unfolding
