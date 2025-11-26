@@ -1,0 +1,52 @@
+exp_name: buildCoP(step)
+dataset_dir:
+  COIN: /path/
+  CrossTask: /path/
+  ht100m: /path/
+  wikihow: /path/
+  CoP: /path/
+  CoP_Ex: /path/
+checkpoint_dir: /path/
+log_dir: /path/
+num_workers: -1
+seed: -1
+curr_time: -1
+config_task: /path/
+pwd: /path/
+level: step
+text_encoder: S3D
+visual_encoder: S3D
+step_text: step_headline
+cluster_sim: true
+cluster_config:
+  linkage: single
+  distance_threshold: 0.09
+  metric: cosine
+num_nodes: 10038
+num_steps: 10588
+graph_ht100m_config:
+  criteria: threshold
+  threshold: 10
+  topK: 3
+  min_conf: 10
+
+stepVNM_config:
+  criteria: topK
+  threshold: -1
+  topK: 5
+stepVTM_config:
+  criteria: topK
+  threshold: 0.2
+  topK: 20
+stepTCL_config:
+  criteria: topK
+  threshold: 0.2
+  topK: 20
+stepNRL_config:
+  criteria: topK
+  threshold: 0.2
+  topK: 8
+  khop: 2
+edge_config:
+  edge_conf_threshold: 0.1
+

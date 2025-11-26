@@ -1,0 +1,48 @@
+exp_name: buildCoP(state)
+dataset_dir:
+  COIN: /path/
+  CrossTask: /path/
+  ht100m: /path/
+  wikihow: /path/
+  CoP: /path/
+  CoP_Ex: /path/
+checkpoint_dir: /path/
+log_dir: /path/
+num_workers: -1
+seed: -1
+curr_time: -1
+config_task: /path/
+config_step: /path/
+pwd: /path/
+level: state
+visual_encoder: S3D
+text_encoder: S3D
+state_text: GPT4o_mini_states
+cluster_sim: true
+B_state_cluster_config:
+  linkage: single
+  distance_threshold: 0.09
+  metric: cosine
+T_state_cluster_config:
+  linkage: single
+  distance_threshold: 0.09
+  metric: cosine
+A_state_cluster_config:
+  linkage: single
+  distance_threshold: 0.09
+  metric: cosine
+num_nodes: -1
+num_steps: -1
+num_B_nodes: -1
+num_T_nodes: -1
+num_A_nodes: -1
+num_states: -1
+
+stateVNM_config:
+  criteria: topK
+  threshold: 0.2
+  topK: 5
+stateT2BA_config:
+  criteria: topK
+  threshold: 0.2
+  topK: 5

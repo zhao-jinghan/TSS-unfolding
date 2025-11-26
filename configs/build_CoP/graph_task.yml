@@ -1,0 +1,30 @@
+exp_name: buildCoP(task)
+dataset_dir:
+  COIN: /path/
+  CrossTask: /path/
+  ht100m: /path/
+  wikihow: /path/
+  CoP: /path/
+  CoP_Ex: /path/
+checkpoint_dir: /path/
+log_dir: /path/
+num_workers: -1
+seed: -1
+curr_time: -1
+pwd: /path/
+level: task
+task_source: wikihow
+text_encoder: S3D
+task_text: tasks
+visual_encoder: S3D
+cluster_sim: false
+cluster_config:
+  linkage: single
+  distance_threshold: 1
+  metric: cosine
+num_nodes: 1053
+num_tasks: 1053
+taskVNM_config:
+  criteria: topK
+  threshold: 0.25
+  topK: 5

@@ -1,0 +1,96 @@
+# 预训练阶段 
+# -- Project settings:
+exp_name: CoP
+project: 
+entity: 
+
+# shared_settings 
+# -- wikiHow settings:
+dataset_dir: 
+  COIN: '/path/'
+  CrossTask: '/path/'
+  ht100m: '/path/'
+  wikihow: '/path/'
+  CoP: '/path/'
+
+
+checkpoint_dir: /path/
+log_dir: /path/ 
+
+# -- Pseudo label settings:
+graph_task_config: '/path/'
+graph_step_config: '/path/'
+graph_state_config: '/path/'
+
+
+pretrain_knowledge: 'CoP'
+adapter_objective:
+  task: 
+    - 'taskVNM' 
+  step: 
+    - 'stepVNM'
+    - 'stepTCL'
+    - 'stepNRL'
+  state:
+    - 'stateVNM'
+
+
+task_num_nodes: None  
+step_num_nodes: None
+state_num_nodes: None
+num_tasks: None
+num_steps: None
+
+
+cls_topK: 3
+ 
+# -- Adapter settings:
+adapter_name: adapter_mlp 
+adapter_tx:
+  time_pos_embed_type: absolute_learned_1D
+  max_time_ids: None 
+  
+# adapter_name: adapter_tx
+s3d_hidden_dim: 512 # 512
+bottleneck_dim: 128 # 128
+adapter_refined_feat_dim: 512 #512
+
+# -- Pretrain objective settings:
+
+pretrain_stepNRL_khop: 1
+
+# ---- loss ratios
+taskVNM_loss_ratio: 1 
+
+stepVNM_loss_ratio: 1
+stepTCL_loss_ratio: 1
+stepNRL_loss_ratio: 1
+
+stateVNM_loss_ratio: 1
+
+
+# -- Adapter training settings:
+adapter_start_save_epoch: 50
+adapter_save_freq: 20
+adapter_num_epochs: 3000
+adapter_batch_size: 256
+adapter_optimizer: 'adam'
+adapter_learning_rate: 0.0001
+adapter_weight_decay: 0
+adapter_lr_warm_up: False
+adapter_warmup_steps: 500
+
+
+# -- General settings:
+seed: 42
+# seed is -1 means random, otherwise put a seed number that is greater than 0
+cudnn_benchmark: True
+curr_time: -1
+num_workers: 8
+# num_workers -1 will dynamically compute the number of available workers
+device: cuda
+working_abspath: 
+ddp_log_each_rank: False
+rank: -1
+world_size: -1 
+partition_dataset: False 
