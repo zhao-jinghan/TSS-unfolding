@@ -43,7 +43,16 @@ CPU 内存随 batch 中最长视频序列和 batch size 增长。默认 batch si
 
 ## 3. 数据准备与路径
 
-若已获得原数据压缩包，将其放到 `evaluation/CrossTask_required_full.tar.gz`。原工作区有综合校验记录 download_verification.json（不随代码上传）。原始下载校验覆盖 6,718 个压缩包成员。数据和权重未包含在 Git 仓库中，需自行放置；下载记录描述原运行工作区，不提供公开下载链接。数据包包含本流程依赖的特征、时间戳、标注和划分元数据，不含原视频。
+评测材料下载：[AAAI-26-material](https://bhpan.buaa.edu.cn/link/AAB62640268C3946B69D15936EE50E1EB9)。
+
+- 文件夹名：`AAAI-26-material`
+- 有效期限：**2026-12-09 03:27**
+- 内容：预训练 checkpoint 和 CrossTask 下游评测数据。
+
+下载后，将 `.pth` 文件放到 `evaluation/checkpoints/`；将 CrossTask 特征压缩包 `CrossTask_required_full.tar.gz` 放到 `evaluation/`，按下面命令解压。默认使用 `task-step-state-step-task.pth`。如果保存在其他目录，通过 `--checkpoint` 和 `--data-dir` 传入实际路径，无需修改源码。分享链接有有效期限，请在到期前下载所需材料。
+
+
+若已获得原数据压缩包，将其放到 `evaluation/CrossTask_required_full.tar.gz`。原工作区有综合校验记录 download_verification.json（不随代码上传）。原始下载校验覆盖 6,718 个压缩包成员。数据和权重通过上方网盘链接单独提供，未包含在 Git 仓库中；下载记录描述原运行工作区。数据包包含本流程依赖的特征、时间戳、标注和划分元数据，不含原视频。
 
 尚未解压时执行：
 

@@ -6,6 +6,27 @@ This directory provides the complete runtime for TR (`task_cls`), SR (`step_cls`
 SF (`step_forecasting`). The pretrained Adapter is frozen; only the Transformer head
 is trained. No pretraining dataset is required.
 
+## Download checkpoints and CrossTask data
+
+Download the evaluation materials from [AAAI-26-material](https://bhpan.buaa.edu.cn/link/AAB62640268C3946B69D15936EE50E1EB9).
+
+- Folder name: `AAAI-26-material`
+- Available until: **2026-12-09 03:27**
+- Contents: pretrained checkpoints and CrossTask data for downstream evaluation.
+
+Place the downloaded `.pth` files under `evaluation/checkpoints/`. Place
+`CrossTask_required_full.tar.gz` under `evaluation/` and extract it from the repository root:
+
+```bash
+mkdir -p evaluation/data
+tar -xzf evaluation/CrossTask_required_full.tar.gz -C evaluation/data
+```
+
+The extracted data root should be `evaluation/data/CrossTask/`. The default checkpoint
+is `evaluation/checkpoints/task-step-state-step-task.pth`. For another location, pass
+`--data-dir` and `--checkpoint` explicitly. See the detailed guide for the required files.
+The share link expires at the time listed above; the data and weights are not stored in Git.
+
 ## Setup and quick start
 
 Run from the repository root:
