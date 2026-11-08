@@ -32,3 +32,23 @@ This repository contains the official implementation of the paper: **"Learning P
 - [ ] Release core code (Training & Inference)
 - [ ] Release pre-trained models
 - [ ] Provide training scripts and documentation
+
+
+## CrossTask downstream evaluation
+
+The complete downstream implementation is available under [`evaluation/`](evaluation/README.md).
+It supports task recognition (TR), step recognition (SR), and step forecasting (SF),
+using a frozen pretrained MLP Adapter and a trainable Transformer head.
+
+```bash
+python3.9 -m venv .venv-eval
+.venv-eval/bin/python -m pip install -r evaluation/requirements.lock.txt
+# Place CrossTask features/splits/annotations under evaluation/data/CrossTask/
+# Place the pretrained Adapter under evaluation/checkpoints/
+bash evaluation/quick_start.sh
+```
+
+See the [detailed evaluation guide](evaluation/docs/CrossTask评测指南.md) for data layout,
+checkpoint selection, parameter explanations, monitoring, and metric interpretation.
+Data and model weights must be supplied separately. Reference results use the original
+splits, including 33 overlapping TR videos, and select the best epoch by test accuracy.

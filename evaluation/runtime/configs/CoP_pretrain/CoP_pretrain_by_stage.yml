@@ -1,0 +1,5 @@
+# Adapter architecture for downstream inference; no pretraining data required.
+adapter_name: adapter_mlp
+s3d_hidden_dim: 512
+bottleneck_dim: 128
+adapter_refined_feat_dim: 512

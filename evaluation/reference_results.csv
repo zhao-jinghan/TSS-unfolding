@@ -1,0 +1,4 @@
+task,checkpoint,best_acc_percent,best_epoch,stop_epoch
+task_cls,task-step-state-step-task.pth,89.648033126294,6,56
+step_cls,task-step-state-step-task.pth,57.19257540603248,16,66
+step_forecasting,task-step-state-step-task.pth,39.067702552719204,6,56
